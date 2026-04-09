@@ -31,7 +31,6 @@ function startAnnounceTask(client) {
         .addFields(
           { name: '🌐 IP', value: `\`\`\`${MC_IP}\`\`\``, inline: false },
           { name: '📶 Estado', value: s.online ? '🟢 En línea' : '🔴 Fuera de línea', inline: true },
-          { name: '🔌 Puerto', value: `\`${MC_PORT}\``, inline: true },
         )
         .setFooter({ text: `${THEME.footer} • Próximo anuncio en ~${hours}h` })
         .setTimestamp();
