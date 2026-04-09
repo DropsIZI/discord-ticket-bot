@@ -2,6 +2,9 @@ const { EmbedBuilder } = require('discord.js');
 const { getServerStatus, MC_IP, MC_PORT } = require('./minecraftStatus');
 const THEME = require('./theme');
 
+const THUMBNAIL = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/thumbnail.png';
+const BANNER    = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/banner.png';
+
 function startAnnounceTask(client) {
   const channelId = process.env.MC_ANNOUNCE_CHANNEL_ID;
   const hours = parseFloat(process.env.MC_ANNOUNCE_INTERVAL_HOURS || '6');
@@ -21,21 +24,21 @@ function startAnnounceTask(client) {
       const s = await getServerStatus();
 
       const embed = new EmbedBuilder()
-        .setTitle(`⛏️  ${THEME.name} — Servidor Minecraft`)
+        .setTitle(`🌍  CobbleverseMMO — Servidor Cobblemon`)
         .setColor(s.online ? THEME.colors.primary : THEME.colors.danger)
         .setDescription(
           s.online
-            ? `¡El servidor está **en línea**! Conéctate ahora.`
-            : `El servidor está **fuera de línea** en este momento.`
+            ? `### ¡El servidor está **en línea**! ⚡\n> Únete a la aventura Cobblemon y atrapa, entrena y combate con tus Pokémon favoritos.`
+            : `### El servidor está **fuera de línea** 😴\n> Vuelve pronto, ¡la aventura te espera!`
         )
         .addFields(
-          { name: '🌐 IP', value: `\`\`\`${MC_IP}\`\`\``, inline: false },
+          { name: '🌐 Dirección IP', value: `\`\`\`${MC_IP}\`\`\``, inline: false },
           { name: '📶 Estado', value: s.online ? '🟢 En línea' : '🔴 Fuera de línea', inline: true },
         )
+        .setThumbnail(THUMBNAIL)
+        .setImage(BANNER)
         .setFooter({ text: `${THEME.footer} • Próximo anuncio en ~${hours}h` })
         .setTimestamp();
-
-      if (THEME.logo) embed.setThumbnail(THEME.logo);
 
       if (s.online) {
         embed.addFields(
