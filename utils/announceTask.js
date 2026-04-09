@@ -28,7 +28,7 @@ function startAnnounceTask(client) {
         .setColor(s.online ? THEME.colors.primary : THEME.colors.danger)
         .setDescription(
           s.online
-            ? `### ¡El servidor está **en línea**! ⚡\n> Únete a la aventura Cobblemon y atrapa, entrena y combate con tus Pokémon favoritos.`
+            ? `### ¡El servidor está **en línea**! ⚡\n> Únete a la aventura Pokémon y atrapa, entrena y combate con tus Pokémon favoritos.`
             : `### El servidor está **fuera de línea** 😴\n> Vuelve pronto, ¡la aventura te espera!`
         )
         .addFields(
