@@ -55,13 +55,12 @@ const CATEGORIAS = [
     ],
   },
   {
-    emoji: '�️',
+    emoji: '🏛️',           // ← corregido (estaba corrupto: '🏛️')
     titulo: 'Reglas Específicas del Servidor',
     reglas: [
       'No está permitido el comercio real (comprar o vender Pokémon, objetos del juego, monedas o transacciones similares por dinero real).',
       'El uso de cuentas alternativas para obtener ventaja está prohibido y llevará a baneo. Puedes jugar en otra cuenta separada solo si NO transfieres cosas entre ellas.',
       'Macros o cualquier automatización con software externo o mods no está permitido.',
-      'No se permiten plataformas flotantes de aparición de Pokémon. (Incluye plataformas con dowsing/silvally en Ultra Space).',
       'No bloquear el acceso a tus reclamos en Ultra Space.',
       'No se permiten casinos gestionados por jugadores.',
       'No hagas múltiples warps al mismo lugar y no crees nombres de warp de jugador similares a los warps del servidor.',
@@ -74,7 +73,7 @@ const CATEGORIAS = [
     ],
   },
   {
-    emoji: '�📜',
+    emoji: '📜',           // ← corregido (estaba corrupto: '📜')
     titulo: 'Disposiciones Finales',
     reglas: [
       'El Moderador tiene la última palabra en cualquier conflicto.',
