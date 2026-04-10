@@ -49,7 +49,7 @@ module.exports = {
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `💎 **NOTA** — Configura al menos **6 GB de RAM** en el launcher.\n` +
         `Algunas versiones de los mods pueden variar con las actualizaciones.\n` +
-        `❓ ¿Tienes problemas? Abre un ticket en <#${process.env.RULES_CHANNEL_ID ?? 'tickets'}>`
+        `❓ ¿Tienes problemas? Abre un ticket en <#1486773607542554864>`
       )
       .setFooter({ text: `${THEME.footer}` })
       .setTimestamp();

@@ -42,7 +42,7 @@ module.exports = {
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `⚠️ **IMPORTANTE** — Necesitas tener **Modrinth Launcher** instalado para que funcione.\n` +
         `Descárgalo en: https://modrinth.com/app\n\n` +
-        `❓ ¿Tienes problemas? Abre un ticket en <#${process.env.RULES_CHANNEL_ID ?? 'tickets'}>`
+        `❓ ¿Tienes problemas? Abre un ticket en <#1486773607542554864>`
       )
       .setFooter({ text: `${THEME.footer}` })
       .setTimestamp();
