@@ -5,7 +5,7 @@ module.exports = {
   once: true,
   execute(client) {
     console.log(`✅ Bot conectado como ${client.user.tag}`);
-    client.user.setActivity('⛏️ Servidor Minecraft', { type: 3 }); // WATCHING
+    client.user.setActivity('🌍 cobbleversemmo.net', { type: 0 }); // PLAYING
     startAnnounceTask(client);
   },
 };
