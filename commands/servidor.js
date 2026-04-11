@@ -5,7 +5,7 @@ const THEME = require('../utils/theme');
 const ALLOWED_ROLES = ['1486544373297709077', '1486544806250418346']; // Dioses, Mods
 
 const THUMBNAIL = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/ball.png';
-const BANNER    = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/banner.png';
+const BANNER    = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/banner_v2.png';
 
 module.exports = {
   data: new SlashCommandBuilder()

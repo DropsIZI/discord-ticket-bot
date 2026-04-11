@@ -3,7 +3,7 @@ const { getServerStatus, MC_IP, MC_PORT } = require('./minecraftStatus');
 const THEME = require('./theme');
 
 const THUMBNAIL = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/ball.png';
-const BANNER    = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/banner.png';
+const BANNER    = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/banner_v2.png';
 
 function startAnnounceTask(client) {
   const channelId = process.env.MC_ANNOUNCE_CHANNEL_ID;
