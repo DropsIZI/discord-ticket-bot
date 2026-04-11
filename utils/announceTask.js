@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 const { getServerStatus, MC_IP, MC_PORT } = require('./minecraftStatus');
 const THEME = require('./theme');
 
-const THUMBNAIL = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/thumbnail.png';
+const THUMBNAIL = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/ball.png';
 const BANNER    = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/banner.png';
 
 function startAnnounceTask(client) {
