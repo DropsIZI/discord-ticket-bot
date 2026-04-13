@@ -1,8 +1,6 @@
-const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { getServerStatus, MC_IP } = require('../utils/minecraftStatus');
 const THEME = require('../utils/theme');
-
-const ALLOWED_ROLES = ['1486544373297709077', '1486544806250418346']; // Dioses, Mods
 
 const THUMBNAIL = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/lujo.png';
 const BANNER    = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/banner_v2.png';
@@ -10,16 +8,10 @@ const BANNER    = 'https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('servidor')
-    .setDescription('Publica el estado actual del servidor de Minecraft')
-    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
+    .setDescription('Muestra el estado actual del servidor de Minecraft'),
 
   async execute(interaction) {
-    const hasRole = interaction.member.roles.cache.some(r => ALLOWED_ROLES.includes(r.id));
-    if (!hasRole) {
-      return interaction.reply({ content: '❌ No tienes permiso para usar este comando.', ephemeral: true });
-    }
-
-    await interaction.deferReply({ ephemeral: true });
+    await interaction.deferReply();
 
     const s = await getServerStatus();
     const hours = parseFloat(process.env.MC_ANNOUNCE_INTERVAL_HOURS || '6');
@@ -48,7 +40,6 @@ module.exports = {
       );
     }
 
-    await interaction.channel.send({ embeds: [embed] });
-    await interaction.editReply({ content: '✅ Estado del servidor publicado.' });
+    await interaction.editReply({ embeds: [embed] });
   },
 };
