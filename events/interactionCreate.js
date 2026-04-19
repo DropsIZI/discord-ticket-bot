@@ -87,6 +87,15 @@ module.exports = {
         });
       }
 
+      permissionOverwrites.push({
+        id: '1486544898084573365', // Helper
+        allow: [
+          PermissionFlagsBits.ViewChannel,
+          PermissionFlagsBits.SendMessages,
+          PermissionFlagsBits.AttachFiles,
+        ],
+      });
+
       const ticketChannel = await guild.channels.create({
         name: channelName,
         type: ChannelType.GuildText,
