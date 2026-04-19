@@ -88,7 +88,7 @@ module.exports = {
       }
 
       permissionOverwrites.push({
-        id: '1486544898084573365', // Helper
+        id: '1495438511690485830', // Helper
         allow: [
           PermissionFlagsBits.ViewChannel,
           PermissionFlagsBits.SendMessages,
@@ -128,7 +128,7 @@ module.exports = {
       );
 
       const pingRoles = {
-        soporte: '1486544898084573365', // Helper
+        soporte: '1495438511690485830', // Helper
         bug:     '1486544806250418346', // Mods
         compras: '1486544373297709077', // Dioses (Owner)
       };
