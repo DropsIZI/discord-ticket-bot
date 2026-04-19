@@ -127,8 +127,15 @@ module.exports = {
           .setStyle(ButtonStyle.Danger)
       );
 
+      const pingRoles = {
+        soporte: '1486544898084573365', // Helper
+        bug:     '1486544806250418346', // Mods
+        compras: '1486544373297709077', // Dioses (Owner)
+      };
+      const pingRole = pingRoles[type];
+
       await ticketChannel.send({
-        content: supportRoleId ? `${user} | <@&${supportRoleId}>` : `${user}`,
+        content: `${user}${pingRole ? ` | <@&${pingRole}>` : ''}`,
         embeds: [welcomeEmbed],
         components: [closeRow],
       });
