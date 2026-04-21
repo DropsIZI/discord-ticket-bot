@@ -8,6 +8,7 @@
     "deploy": "node deploy-commands.js"
   },
   "dependencies": {
+    "@napi-rs/canvas": "^0.1.99",
     "discord.js": "^14.25.1",
     "dotenv": "^16.4.5",
     "minecraft-server-util": "^5.4.2"
