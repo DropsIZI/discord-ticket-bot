@@ -58,7 +58,8 @@ module.exports = {
         `🚀 Destaca entre todos los jugadores\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `> 🛒 Visita nuestra tienda y elige tu rango favorito.\n` +
-        `> Cada compra contribuye directamente al crecimiento de **CobbleverseMMO**. ❤️`
+        `> Cada compra contribuye directamente al crecimiento de **CobbleverseMMO**. ❤️\n\n` +
+        `🔗 **https://cobbleversemmo.tebex.io**`
       )
       .setImage('https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/banner_v2.png')
       .setFooter({ text: `${THEME.footer} • Pagos 100% seguros` })
