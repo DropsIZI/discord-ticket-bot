@@ -44,6 +44,11 @@ module.exports = {
         `> Lidera con poder y prestigio en CobbleverseMMO.\n\n` +
         `👑 **Alto Mando** — $99.99\n` +
         `> El rango más exclusivo. Solo para los verdaderos Campeones.\n\n` +
+        `> ✨ *¡Y muchos rangos más esperándote en la tienda!*\n\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+        `## 🎉 OFERTA DE LANZAMIENTO — ¡Primer mes todo a mitad de precio!\n` +
+        `> Aprovecha esta oferta exclusiva por tiempo limitado. ⏳\n` +
+        `> Usa el código o accede directo desde el botón para obtener tu descuento.\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## ✨ ¿Por qué comprar un rango?\n\n` +
         `🌟 Apoya el servidor y mantén el proyecto vivo\n` +

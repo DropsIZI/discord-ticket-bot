@@ -18,7 +18,8 @@ function startStoreAnnounceTask(client) {
           `> Consigue rangos exclusivos y beneficios únicos que llevarán tu aventura Pokémon al siguiente nivel.\n\n` +
           `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
           `🟡 **Entrenador** $9.99 · 🟠 **Criador** $19.99 · 🔵 **Investigador** $29.99\n` +
-          `🟢 **Ranger** $39.99 · 🔴 **Líder** $49.99 · 👑 **Alto Mando** $99.99\n\n` +
+          `🟢 **Ranger** $39.99 · 🔴 **Líder** $49.99 · 👑 **Alto Mando** $99.99 · *¡y más!*\n\n` +
+          `🎉 **¡OFERTA DE LANZAMIENTO! Primer mes todo a mitad de precio.** ⏳\n\n` +
           `> Cada compra ayuda a mantener y mejorar el servidor. ❤️\n` +
           `> ¡Únete a los mejores Entrenadores de **CobbleverseMMO**!`
         )
