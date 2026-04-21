@@ -32,12 +32,18 @@ module.exports = {
         `> Obtén rangos exclusivos y beneficios únicos que mejorarán tu experiencia en **CobbleverseMMO**.\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## 🎖️ Rangos Disponibles\n\n` +
-        `**💎 Rango Legendario**\n` +
-        `> El rango más exclusivo del servidor. Para los verdaderos Maestros Pokémon.\n\n` +
-        `**🔥 Rango Épico**\n` +
-        `> Acceso a beneficios premium y ventajas especiales en el mundo Cobblemon.\n\n` +
-        `**⚡ Rango Raro**\n` +
-        `> Perfecta entrada al mundo de los rangos. Beneficios únicos a un gran precio.\n\n` +
+        `🟡 **Entrenador** — $9.99\n` +
+        `> El inicio de toda gran aventura Pokémon.\n\n` +
+        `🟠 **Criador** — $19.99\n` +
+        `> Para quienes dominan la cría y el cuidado de Pokémon.\n\n` +
+        `🔵 **Investigador** — $29.99\n` +
+        `> Explora y descubre los secretos del mundo Cobblemon.\n\n` +
+        `🟢 **Ranger** — $39.99\n` +
+        `> Protege y domina las rutas del servidor.\n\n` +
+        `🔴 **Líder** — $49.99\n` +
+        `> Lidera con poder y prestigio en CobbleverseMMO.\n\n` +
+        `👑 **Alto Mando** — $99.99\n` +
+        `> El rango más exclusivo. Solo para los verdaderos Campeones.\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## ✨ ¿Por qué comprar un rango?\n\n` +
         `🌟 Apoya el servidor y mantén el proyecto vivo\n` +
