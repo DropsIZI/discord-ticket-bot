@@ -1,9 +1,11 @@
 const { createCanvas, loadImage, GlobalFonts } = require('@napi-rs/canvas');
 const path = require('path');
+const fs = require('fs');
 
 const BG_PATH = path.join(__dirname, '../assets/welcome-bg.png');
+const FONT_PATH = path.join(__dirname, '../assets/font-bold.ttf');
 
-GlobalFonts.loadSystemFonts();
+GlobalFonts.register(fs.readFileSync(FONT_PATH), 'Roboto');
 
 async function generateWelcomeCard(member) {
   const canvas = createCanvas(800, 300);
@@ -51,17 +53,17 @@ async function generateWelcomeCard(member) {
   const textX = avatarX + avatarSize + 30;
 
   // Texto "¡Bienvenido/a!"
-  ctx.font = 'bold 28px DejaVu Sans, Arial, sans-serif';
+  ctx.font = 'bold 28px Roboto';
   ctx.fillStyle = '#F0B132';
   ctx.fillText('¡Bienvenido/a a CobbleverseMMO!', textX, 110);
 
   // Nombre del usuario
-  ctx.font = 'bold 42px DejaVu Sans, Arial, sans-serif';
+  ctx.font = 'bold 42px Roboto';
   ctx.fillStyle = '#FFFFFF';
   ctx.fillText(member.user.username, textX, 165);
 
   // Miembro número X
-  ctx.font = '22px DejaVu Sans, Arial, sans-serif';
+  ctx.font = '22px Roboto';
   ctx.fillStyle = '#AAAAAA';
   const memberCount = member.guild.memberCount;
   ctx.fillText(`Eres el miembro #${memberCount} del servidor`, textX, 210);
