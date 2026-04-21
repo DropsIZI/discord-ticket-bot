@@ -1,7 +1,23 @@
 const { createCanvas, loadImage, GlobalFonts } = require('@napi-rs/canvas');
 const path = require('path');
+const fs = require('fs');
 
 const BG_PATH = path.join(__dirname, '../assets/welcome-bg.png');
+
+// Registrar fuente DejaVu si está disponible en el sistema
+const FONT_PATHS = [
+  '/run/current-system/sw/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',
+  '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',
+  '/nix/store',
+];
+for (const fp of FONT_PATHS) {
+  if (fs.existsSync(fp) && !fp.endsWith('store')) {
+    GlobalFonts.registerFromPath(fp, 'DejaVu');
+    break;
+  }
+}
+
+const FONT = 'DejaVu, sans-serif';
 
 async function generateWelcomeCard(member) {
   const canvas = createCanvas(800, 300);
@@ -49,17 +65,17 @@ async function generateWelcomeCard(member) {
   const textX = avatarX + avatarSize + 30;
 
   // Texto "¡Bienvenido/a!"
-  ctx.font = 'bold 28px sans-serif';
+  ctx.font = 'bold 28px DejaVu, sans-serif';
   ctx.fillStyle = '#F0B132';
   ctx.fillText('¡Bienvenido/a a CobbleverseMMO!', textX, 110);
 
   // Nombre del usuario
-  ctx.font = 'bold 42px sans-serif';
+  ctx.font = 'bold 42px DejaVu, sans-serif';
   ctx.fillStyle = '#FFFFFF';
   ctx.fillText(member.user.username, textX, 165);
 
   // Miembro número X
-  ctx.font = '22px sans-serif';
+  ctx.font = '22px DejaVu, sans-serif';
   ctx.fillStyle = '#AAAAAA';
   const memberCount = member.guild.memberCount;
   ctx.fillText(`Eres el miembro #${memberCount} del servidor`, textX, 210);
