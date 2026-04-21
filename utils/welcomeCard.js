@@ -68,6 +68,14 @@ async function generateWelcomeCard(member) {
   const memberCount = member.guild.memberCount;
   ctx.fillText(`Eres el miembro #${memberCount} del servidor`, textX, 210);
 
+  // Tienda
+  ctx.font = 'bold 18px Roboto';
+  ctx.fillStyle = '#F0B132';
+  ctx.fillText('🛒 Tienda:', textX, 248);
+  ctx.font = '18px Roboto';
+  ctx.fillStyle = '#5BC8F5';
+  ctx.fillText('cobbleversemmo.tebex.io', textX + 85, 248);
+
   return canvas.toBuffer('image/png');
 }
 
