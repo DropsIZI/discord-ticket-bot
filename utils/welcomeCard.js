@@ -24,54 +24,75 @@ async function generateWelcomeCard(member) {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
 
-  // Overlay oscuro semitransparente
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
+  // Overlay degradado de izquierda a derecha
+  const overlay = ctx.createLinearGradient(0, 0, canvas.width, 0);
+  overlay.addColorStop(0, 'rgba(0,0,0,0.85)');
+  overlay.addColorStop(0.6, 'rgba(0,0,0,0.55)');
+  overlay.addColorStop(1, 'rgba(0,0,0,0.1)');
+  ctx.fillStyle = overlay;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // Avatar circular
-  const avatarSize = 130;
-  const avatarX = 80;
-  const avatarY = canvas.height / 2 - avatarSize / 2;
+  const avatarSize = 120;
+  const centerY = canvas.height / 2;
+  const avatarX = 40;
+  const avatarY = centerY - avatarSize / 2;
   const avatarUrl = member.user.displayAvatarURL({ extension: 'png', size: 256 });
+
+  // Glow dorado detrás del avatar
+  ctx.shadowColor = '#F0B132';
+  ctx.shadowBlur = 20;
+  ctx.beginPath();
+  ctx.arc(avatarX + avatarSize / 2, centerY, avatarSize / 2 + 4, 0, Math.PI * 2);
+  ctx.strokeStyle = '#F0B132';
+  ctx.lineWidth = 4;
+  ctx.stroke();
+  ctx.shadowBlur = 0;
 
   ctx.save();
   ctx.beginPath();
-  ctx.arc(avatarX + avatarSize / 2, avatarY + avatarSize / 2, avatarSize / 2, 0, Math.PI * 2);
+  ctx.arc(avatarX + avatarSize / 2, centerY, avatarSize / 2, 0, Math.PI * 2);
   ctx.closePath();
   ctx.clip();
   const avatar = await loadImage(avatarUrl);
   ctx.drawImage(avatar, avatarX, avatarY, avatarSize, avatarSize);
   ctx.restore();
 
-  // Borde del avatar
-  ctx.beginPath();
-  ctx.arc(avatarX + avatarSize / 2, avatarY + avatarSize / 2, avatarSize / 2 + 3, 0, Math.PI * 2);
-  ctx.strokeStyle = '#F0B132';
-  ctx.lineWidth = 4;
-  ctx.stroke();
+  const textX = avatarX + avatarSize + 28;
 
-  const textX = avatarX + avatarSize + 30;
-
-  // Texto "¡Bienvenido/a!"
-  ctx.font = 'bold 28px Roboto';
+  // Línea decorativa dorada
   ctx.fillStyle = '#F0B132';
-  ctx.fillText('¡Bienvenido/a a CobbleverseMMO!', textX, 110);
+  ctx.fillRect(textX, 60, 3, 180);
 
-  // Nombre del usuario
-  ctx.font = 'bold 42px Roboto';
+  const textStart = textX + 16;
+
+  // Texto superior pequeño
+  ctx.font = '18px Roboto';
+  ctx.fillStyle = '#F0B132';
+  ctx.fillText('¡BIENVENIDO/A A COBBLEVERSEMMO!', textStart, 95);
+
+  // Nombre del usuario grande
+  ctx.font = 'bold 48px Roboto';
   ctx.fillStyle = '#FFFFFF';
-  ctx.fillText(member.user.username, textX, 165);
+  ctx.shadowColor = 'rgba(0,0,0,0.8)';
+  ctx.shadowBlur = 8;
+  ctx.fillText(member.user.username, textStart, 155);
+  ctx.shadowBlur = 0;
+
+  // Separador
+  ctx.fillStyle = 'rgba(255,255,255,0.15)';
+  ctx.fillRect(textStart, 168, 420, 1);
 
   // Miembro número X
-  ctx.font = '22px Roboto';
-  ctx.fillStyle = '#AAAAAA';
+  ctx.font = '20px Roboto';
+  ctx.fillStyle = '#CCCCCC';
   const memberCount = member.guild.memberCount;
-  ctx.fillText(`Eres el miembro #${memberCount} del servidor`, textX, 210);
+  ctx.fillText(`Miembro #${memberCount}`, textStart, 200);
 
   // Tienda
   ctx.font = '18px Roboto';
   ctx.fillStyle = '#5BC8F5';
-  ctx.fillText('🛒 cobbleversemmo.tebex.io', textX, 248);
+  ctx.fillText('🛒 cobbleversemmo.tebex.io', textStart, 230);
 
   return canvas.toBuffer('image/png');
 }
