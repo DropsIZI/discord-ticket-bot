@@ -23,7 +23,7 @@ module.exports = {
       return interaction.reply({ content: '❌ No tienes permiso para usar este comando.', ephemeral: true });
     }
 
-    const mensaje = interaction.options.getString('mensaje');
+    const mensaje = interaction.options.getString('mensaje').replace(/\\n/g, '\n');
 
     await interaction.channel.send(mensaje);
     await interaction.reply({ content: '✅ Mensaje enviado.', ephemeral: true });
