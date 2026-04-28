@@ -2,7 +2,7 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('
 const THEME = require('./theme');
 
 const STORE_CHANNEL_ID = '1491934044831879189';
-const INTERVAL_HOURS = 1;
+const INTERVAL_HOURS = 3;
 
 function startStoreAnnounceTask(client) {
   const announce = async () => {
