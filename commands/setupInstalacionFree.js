@@ -31,7 +31,7 @@ module.exports = {
         `> ⚠️ **Si tienes AdBlock activado, la página no te dejará descargar.** Desactívalo temporalmente.\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## 📦 PASO 2 — Descarga el Modpack de Cobbleverse\n` +
-        `> Descarga el archivo del modpack que se encuentra **justo abajo de este mensaje**.\n\n` +
+        `> https://drive.google.com/file/d/1oOBw434CUtW0yQkI4xPNLlqYGzMk9RFZ/view\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## ⚙️ PASO 3 — Configura SKLauncher\n` +
         `> Abre **SKLauncher** y añade tu **Nickname**.\n` +

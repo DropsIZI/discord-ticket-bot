@@ -50,6 +50,9 @@ module.exports = {
         `> Aprovecha esta oferta exclusiva por tiempo limitado. ⏳\n` +
         `> Usa el código o accede directo desde el botón para obtener tu descuento.\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+        `🛒 **Tienda:** https://cobbleversemmo.tebex.io\n` +
+        `🎵 **TikTok:** https://www.tiktok.com/@cobbleversemmo.net\n\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## ✨ ¿Por qué comprar un rango?\n\n` +
         `🌟 Apoya el servidor y mantén el proyecto vivo\n` +
         `🎨 Prefijos y colores exclusivos en el chat\n` +
