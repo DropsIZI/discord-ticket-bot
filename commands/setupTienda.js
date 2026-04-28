@@ -28,41 +28,32 @@ module.exports = {
       .setTitle('🏆  Tienda Oficial — CobbleverseMMO')
       .setColor(THEME.colors.primary)
       .setDescription(
-        `### ¿Quieres destacar en tu aventura Pokémon? ⚡\n` +
-        `> Obtén rangos exclusivos y beneficios únicos que mejorarán tu experiencia en **CobbleverseMMO**.\n\n` +
+        `## ⚡ ¿Quieres ser el mejor Entrenador de CobbleverseMMO?\n` +
+        `> Obtén rangos exclusivos con beneficios únicos y apoya el crecimiento del servidor.\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## 🎖️ Rangos Disponibles\n\n` +
-        `🟡 **Entrenador** — $9.99\n` +
-        `> El inicio de toda gran aventura Pokémon.\n\n` +
-        `🟠 **Criador** — $19.99\n` +
-        `> Para quienes dominan la cría y el cuidado de Pokémon.\n\n` +
-        `🔵 **Investigador** — $29.99\n` +
-        `> Explora y descubre los secretos del mundo Cobblemon.\n\n` +
-        `🟢 **Ranger** — $39.99\n` +
-        `> Protege y domina las rutas del servidor.\n\n` +
-        `🔴 **Líder** — $49.99\n` +
-        `> Lidera con poder y prestigio en CobbleverseMMO.\n\n` +
-        `👑 **Alto Mando** — $99.99\n` +
-        `> El rango más exclusivo. Solo para los verdaderos Campeones.\n\n` +
-        `> ✨ *¡Y muchos rangos más esperándote en la tienda!*\n\n` +
+        `> 🟡 **Entrenador** — \`$9.99\`\n` +
+        `> 🟠 **Criador** — \`$19.99\`\n` +
+        `> 🔵 **Investigador** — \`$29.99\`\n` +
+        `> 🟢 **Ranger** — \`$39.99\`\n` +
+        `> 🔴 **Líder** — \`$49.99\`\n` +
+        `> 👑 **Alto Mando** — \`$99.99\`\n` +
+        `> ✨ *¡Y muchos más esperándote en la tienda!*\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
-        `## 🎉 OFERTA DE LANZAMIENTO — ¡Primer mes todo a mitad de precio!\n` +
-        `> Aprovecha esta oferta exclusiva por tiempo limitado. ⏳\n` +
-        `> Usa el código o accede directo desde el botón para obtener tu descuento.\n\n` +
+        `## ✨ Beneficios de tener un rango\n\n` +
+        `> 🌟 Apoya el servidor y mantén el proyecto vivo\n` +
+        `> 🎨 Prefijos y colores exclusivos en el chat\n` +
+        `> 🎁 Permisos y beneficios especiales en el juego\n` +
+        `> 👑 Acceso a canales y eventos exclusivos\n` +
+        `> 🚀 Destaca entre todos los jugadores\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
-        `🛒 **Tienda:** https://cobbleversemmo.tebex.io\n` +
-        `🎵 **TikTok:** https://www.tiktok.com/@cobbleversemmo.net\n\n` +
+        `## 🎉 OFERTA DE LANZAMIENTO\n` +
+        `> ⏳ **¡Primer mes todo a mitad de precio!**\n` +
+        `> No dejes pasar esta oportunidad exclusiva por tiempo limitado.\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
-        `## ✨ ¿Por qué comprar un rango?\n\n` +
-        `🌟 Apoya el servidor y mantén el proyecto vivo\n` +
-        `🎨 Prefijos y colores exclusivos en el chat\n` +
-        `🎁 Beneficios y permisos especiales en el juego\n` +
-        `👑 Acceso a canales y eventos exclusivos\n` +
-        `🚀 Destaca entre todos los jugadores\n\n` +
-        `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
-        `> 🛒 Visita nuestra tienda y elige tu rango favorito.\n` +
-        `> Cada compra contribuye directamente al crecimiento de **CobbleverseMMO**. ❤️\n\n` +
-        `🔗 **https://cobbleversemmo.tebex.io**`
+        `🛒 **Tienda →** https://cobbleversemmo.tebex.io\n` +
+        `🎵 **TikTok →** https://www.tiktok.com/@cobbleversemmo.net\n\n` +
+        `> ❤️ Cada compra contribuye directamente al crecimiento de **CobbleverseMMO**.`
       )
       .setImage('https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/banner_v2.png')
       .setFooter({ text: `${THEME.footer} • Pagos 100% seguros` })
@@ -72,6 +63,10 @@ module.exports = {
       new ButtonBuilder()
         .setLabel('🛒 Ir a la Tienda')
         .setURL('https://cobbleversemmo.tebex.io')
+        .setStyle(ButtonStyle.Link),
+      new ButtonBuilder()
+        .setLabel('🎵 TikTok')
+        .setURL('https://www.tiktok.com/@cobbleversemmo.net')
         .setStyle(ButtonStyle.Link)
     );
 
