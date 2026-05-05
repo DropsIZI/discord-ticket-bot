@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const { streamLinks } = require('./setStream');
+const { streamLinks } = require('../utils/streamStore');
 const THEME = require('../utils/theme');
 
 const STREAMER_ROLE = '1501077551311749161';

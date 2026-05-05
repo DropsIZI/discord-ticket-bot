@@ -1,10 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { streamLinks } = require('../utils/streamStore');
 
 const STREAMER_ROLE = '1501077551311749161';
-
-// userId -> Map(plataforma -> link)
-const streamLinks = new Map();
-module.exports.streamLinks = streamLinks;
 
 module.exports = {
   data: new SlashCommandBuilder()
