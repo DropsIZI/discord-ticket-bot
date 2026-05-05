@@ -10,7 +10,7 @@ const ALLOWED_ROLES = [
   '1501077551311749161', // Streamer
 ];
 
-const STORY_CHANNEL = '1486544373297709077';
+const STORY_CHANNEL = '1501082116723572827';
 
 module.exports = {
   data: new SlashCommandBuilder()
