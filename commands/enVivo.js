@@ -23,10 +23,10 @@ module.exports = {
       return interaction.reply({ content: '❌ Necesitas el rol de **Streamer** para usar este comando.', ephemeral: true });
     }
 
-    const link = streamLinks.get(interaction.user.id);
-    if (!link) {
+    const links = streamLinks.get(interaction.user.id);
+    if (!links || links.size === 0) {
       return interaction.reply({
-        content: '❌ Primero configura tu link con `/set-stream`.',
+        content: '❌ Primero configura tus links con `/set-stream`.',
         ephemeral: true,
       });
     }
@@ -37,13 +37,17 @@ module.exports = {
       return interaction.reply({ content: '❌ No se encontró el canal de streams.', ephemeral: true });
     }
 
+    const linksText = [...links.entries()]
+      .map(([plataforma, link]) => `> 🔗 **${plataforma}:** ${link}`)
+      .join('\n');
+
     const embed = new EmbedBuilder()
       .setTitle('🔴  ¡STREAM EN VIVO!')
       .setColor(0xFF0000)
       .setDescription(
         `### ${interaction.user.username} está transmitiendo ahora 🎮\n\n` +
         `> 📺 **${titulo}**\n\n` +
-        `🔗 ${link}`
+        `${linksText}`
       )
       .setThumbnail(interaction.user.displayAvatarURL({ extension: 'png', size: 256 }))
       .setFooter({ text: `${THEME.footer} • ¡No te lo pierdas!` })

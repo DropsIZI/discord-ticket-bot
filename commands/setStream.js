@@ -1,19 +1,31 @@
-const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { SlashCommandBuilder } = require('discord.js');
 
 const STREAMER_ROLE = '1501077551311749161';
 
-// Almacena links de streamers en memoria: userId -> url
+// userId -> Map(plataforma -> link)
 const streamLinks = new Map();
 module.exports.streamLinks = streamLinks;
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('set-stream')
-    .setDescription('Guarda el link de tu canal de stream')
+    .setDescription('Guarda el link de uno de tus canales de stream')
+    .addStringOption(option =>
+      option
+        .setName('plataforma')
+        .setDescription('Plataforma donde streameas')
+        .setRequired(true)
+        .addChoices(
+          { name: 'TikTok',  value: 'TikTok' },
+          { name: 'Kick',    value: 'Kick' },
+          { name: 'Twitch',  value: 'Twitch' },
+          { name: 'YouTube', value: 'YouTube' },
+        )
+    )
     .addStringOption(option =>
       option
         .setName('link')
-        .setDescription('Link de tu canal (Twitch, YouTube, TikTok, etc.)')
+        .setDescription('Link de tu canal en esa plataforma')
         .setRequired(true)
     ),
 
@@ -23,11 +35,20 @@ module.exports = {
       return interaction.reply({ content: '❌ Necesitas el rol de **Streamer** para usar este comando.', ephemeral: true });
     }
 
+    const plataforma = interaction.options.getString('plataforma');
     const link = interaction.options.getString('link');
-    streamLinks.set(interaction.user.id, link);
+
+    if (!streamLinks.has(interaction.user.id)) {
+      streamLinks.set(interaction.user.id, new Map());
+    }
+    streamLinks.get(interaction.user.id).set(plataforma, link);
+
+    const todos = [...streamLinks.get(interaction.user.id).entries()]
+      .map(([p, l]) => `**${p}:** ${l}`)
+      .join('\n');
 
     await interaction.reply({
-      content: `✅ Tu link de stream fue guardado: **${link}**\nAhora puedes usar \`/en-vivo\` para notificar que estás en directo.`,
+      content: `✅ Link de **${plataforma}** guardado.\n\n📋 Tus canales registrados:\n${todos}`,
       ephemeral: true,
     });
   },
