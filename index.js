@@ -38,3 +38,7 @@ for (const file of eventFiles) {
 }
 
 client.login(process.env.DISCORD_TOKEN);
+
+// Health check server para Fly.io
+const http = require('http');
+http.createServer((req, res) => res.writeHead(200).end('OK')).listen(8080);
