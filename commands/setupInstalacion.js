@@ -44,7 +44,7 @@ module.exports = {
         `Descárgalo en: https://modrinth.com/app\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## 📥 Link de descarga del Modpack (Premium)\n` +
-        `> https://drive.google.com/file/d/1SsU0bC7D8At3bNfb9Xl6ZcjpQvgKVCyu/view?usp=sharing\n\n` +
+        `> https://drive.google.com/file/d/150IGj3Q6LdK3Blkp3BnX_y_wiF_ACWKX/view?usp=sharing\n\n` +
         `❓ ¿Tienes problemas? Abre un ticket en <#1486773607542554864>`
       )
       .setFooter({ text: `${THEME.footer}` })
