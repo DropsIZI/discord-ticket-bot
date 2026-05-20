@@ -35,7 +35,7 @@ module.exports = {
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## 📦 PASO 2 — Descarga el Modpack Lite\n` +
         `> Este modpack es más liviano y está optimizado para que el juego vaya fluido.\n` +
-        `> https://drive.google.com/file/d/1uM_n1zI01d33a_fwYgSNNJPiPpI9dO0s/view?usp=sharing\n\n` +
+        `> https://drive.google.com/file/d/1NNHG_U3lPPYwxap5rrlWJ2gfnS6sYAbf/view?usp=drive_link\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## ⚙️ PASO 3 — Abre SKLauncher\n` +
         `> Abre el programa que descargaste.\n` +
