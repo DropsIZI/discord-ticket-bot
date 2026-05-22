@@ -17,7 +17,7 @@ function startStoreAnnounceTask(client) {
           `### ¿Quieres ser el mejor Entrenador del servidor? ⚡\n` +
           `> Consigue rangos exclusivos y beneficios únicos que llevarán tu aventura Pokémon al siguiente nivel.\n\n` +
           `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
-          `🎉 **¡OFERTA DE LANZAMIENTO! Primer mes todo a mitad de precio.** ⏳\n\n` +
+          `✨ **Rangos exclusivos con perks únicos que no conseguirás en ningún otro servidor.**\n\n` +
           `> Cada compra ayuda a mantener y mejorar el servidor. ❤️\n` +
           `> ¡Únete a los mejores Entrenadores de **CobbleverseMMO**!`
         )
