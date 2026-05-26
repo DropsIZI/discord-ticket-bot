@@ -1,6 +1,7 @@
 const {
   SlashCommandBuilder,
   PermissionFlagsBits,
+  AttachmentBuilder,
 } = require('discord.js');
 
 const ALLOWED_ROLES = ['1486544373297709077', '1486544806250418346']; // Dioses, Mods
@@ -15,6 +16,12 @@ module.exports = {
         .setName('mensaje')
         .setDescription('El mensaje que enviará el bot')
         .setRequired(true)
+    )
+    .addAttachmentOption(option =>
+      option
+        .setName('imagen')
+        .setDescription('Imagen opcional para adjuntar al mensaje')
+        .setRequired(false)
     ),
 
   async execute(interaction) {
@@ -24,8 +31,12 @@ module.exports = {
     }
 
     const mensaje = interaction.options.getString('mensaje').replace(/\\n/g, '\n');
+    const imagen = interaction.options.getAttachment('imagen');
 
-    await interaction.channel.send(mensaje);
+    const payload = { content: mensaje };
+    if (imagen) payload.files = [imagen.url];
+
+    await interaction.channel.send(payload);
     await interaction.reply({ content: '✅ Mensaje enviado.', ephemeral: true });
   },
 };
