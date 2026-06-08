@@ -38,6 +38,20 @@ const TICKET_TYPES = {
       '📬 **Correo asociado a la cuenta:**',
     ],
   },
+  queja: {
+    emoji: '📢',
+    label: 'Queja al Staff',
+    color: 0x9B59B6,
+    prefix: 'queja',
+    description: 'Reporta una queja sobre un miembro del staff',
+    ownerOnly: true,
+    questions: [
+      '👤 **¿A quién va dirigida la queja?** (nombre del staff)',
+      '📋 **Descripción del problema:** ¿Qué ocurrió exactamente?',
+      '📅 **¿Cuándo ocurrió?** (fecha y hora aproximada)',
+      '🖼️ **Evidencia:** Adjunta capturas de pantalla si tienes.',
+    ],
+  },
 };
 
 function getUserTickets(userId) {

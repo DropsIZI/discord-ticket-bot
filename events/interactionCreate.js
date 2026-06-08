@@ -62,6 +62,9 @@ module.exports = {
       const supportRoleId = process.env.SUPPORT_ROLE_ID;
       const channelName = `${ticketConfig.prefix}-${user.username.toLowerCase().replace(/\s+/g, '-')}`;
 
+      const OWNER_ROLE_ID = '1486544373297709077';
+      const isQueja = type === 'queja';
+
       const permissionOverwrites = [
         { id: guild.id, deny: [PermissionFlagsBits.ViewChannel] },
         {
@@ -73,28 +76,39 @@ module.exports = {
             PermissionFlagsBits.EmbedLinks,
           ],
         },
-      ];
-
-      if (supportRoleId) {
-        permissionOverwrites.push({
-          id: supportRoleId,
+        {
+          id: OWNER_ROLE_ID,
           allow: [
             PermissionFlagsBits.ViewChannel,
             PermissionFlagsBits.SendMessages,
             PermissionFlagsBits.ManageMessages,
             PermissionFlagsBits.AttachFiles,
           ],
+        },
+      ];
+
+      if (!isQueja) {
+        if (supportRoleId) {
+          permissionOverwrites.push({
+            id: supportRoleId,
+            allow: [
+              PermissionFlagsBits.ViewChannel,
+              PermissionFlagsBits.SendMessages,
+              PermissionFlagsBits.ManageMessages,
+              PermissionFlagsBits.AttachFiles,
+            ],
+          });
+        }
+
+        permissionOverwrites.push({
+          id: '1495438511690485830', // Helper
+          allow: [
+            PermissionFlagsBits.ViewChannel,
+            PermissionFlagsBits.SendMessages,
+            PermissionFlagsBits.AttachFiles,
+          ],
         });
       }
-
-      permissionOverwrites.push({
-        id: '1495438511690485830', // Helper
-        allow: [
-          PermissionFlagsBits.ViewChannel,
-          PermissionFlagsBits.SendMessages,
-          PermissionFlagsBits.AttachFiles,
-        ],
-      });
 
       const ticketChannel = await guild.channels.create({
         name: channelName,
@@ -131,6 +145,7 @@ module.exports = {
         soporte: '1495438511690485830', // Helper
         bug:     '1486544806250418346', // Mods
         compras: '1486544373297709077', // Dioses (Owner)
+        queja:   '1486544373297709077', // Dioses (Owner) — solo ellos ven las quejas
       };
       const pingRole = pingRoles[type];
 

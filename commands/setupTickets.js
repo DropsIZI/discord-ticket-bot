@@ -26,7 +26,8 @@ module.exports = {
         `**📂 Categorías Disponibles**\n\n` +
         `🐛 **Bugs** — ¿Encontraste un bug? Selecciona para reportarlo.\n` +
         `🎧 **Soporte** — ¿Necesitas ayuda? Selecciona soporte general.\n` +
-        `🛒 **Compras** — ¿Necesitas ayuda con una compra? Selecciona soporte de compras.\n\n` +
+        `🛒 **Compras** — ¿Necesitas ayuda con una compra? Selecciona soporte de compras.\n` +
+        `📢 **Quejas al Staff** — ¿Tienes una queja sobre el staff? Solo los dueños la verán.\n\n` +
         `✅ Selecciona la **categoría correcta** para recibir ayuda más rápido.\n` +
         `📋 Proporciona **información detallada** al crear tu ticket.\n` +
         `🚫 **No abras múltiples tickets** para el mismo asunto.`
@@ -53,6 +54,11 @@ module.exports = {
         .setLabel('Compras')
         .setEmoji('🛒')
         .setStyle(ButtonStyle.Success),
+      new ButtonBuilder()
+        .setCustomId('ticket_open_queja')
+        .setLabel('Quejas al Staff')
+        .setEmoji('📢')
+        .setStyle(ButtonStyle.Danger),
     );
 
     await interaction.channel.send({ embeds: [embed], components: [row] });
