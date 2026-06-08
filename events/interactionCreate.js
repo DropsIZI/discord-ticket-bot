@@ -48,22 +48,34 @@ module.exports = {
 
       await interaction.deferReply({ ephemeral: true });
 
-      // Categoría de Discord
+      const OWNER_ROLE_ID = '1486544373297709077';
+      const isQueja = type === 'queja';
+
+      // Categoría de Discord — separada para quejas
+      const categoryName = isQueja
+        ? `🔒 Quejas al Staff — ${THEME.name}`
+        : `🎫 Tickets — ${THEME.name}`;
+
+      const categoryPerms = isQueja
+        ? [
+            { id: guild.id, deny: [PermissionFlagsBits.ViewChannel] },
+            { id: OWNER_ROLE_ID, allow: [PermissionFlagsBits.ViewChannel] },
+          ]
+        : undefined;
+
       let category = guild.channels.cache.find(
-        c => c.type === ChannelType.GuildCategory && c.name === `🎫 Tickets — ${THEME.name}`
+        c => c.type === ChannelType.GuildCategory && c.name === categoryName
       );
       if (!category) {
         category = await guild.channels.create({
-          name: `🎫 Tickets — ${THEME.name}`,
+          name: categoryName,
           type: ChannelType.GuildCategory,
+          ...(categoryPerms && { permissionOverwrites: categoryPerms }),
         });
       }
 
       const supportRoleId = process.env.SUPPORT_ROLE_ID;
       const channelName = `${ticketConfig.prefix}-${user.username.toLowerCase().replace(/\s+/g, '-')}`;
-
-      const OWNER_ROLE_ID = '1486544373297709077';
-      const isQueja = type === 'queja';
 
       const permissionOverwrites = [
         { id: guild.id, deny: [PermissionFlagsBits.ViewChannel] },
