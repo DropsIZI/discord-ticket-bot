@@ -37,8 +37,14 @@ for (const file of eventFiles) {
   }
 }
 
+// Evita que errores de Discord (tokens caducados, webhooks inválidos, etc.)
+// derrumben el proceso entero
+client.on('error', err => console.error('[Discord error]', err.message));
+
+process.on('unhandledRejection', err => console.error('[unhandledRejection]', err));
+
 client.login(process.env.DISCORD_TOKEN);
 
-// Health check server para Fly.io
+// Health check server para Render
 const http = require('http');
 http.createServer((req, res) => res.writeHead(200).end('OK')).listen(8080);
