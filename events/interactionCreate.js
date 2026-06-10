@@ -78,6 +78,18 @@ module.exports = {
         const supportRoleId = process.env.SUPPORT_ROLE_ID;
         const channelName = `${ticketConfig.prefix}-${user.username.toLowerCase().replace(/\s+/g, '-')}`;
 
+        const STAFF_ROLES = [
+          { id: '1500337427276103850' }, // Admin
+          { id: '1486544806250418346' }, // Mod
+          { id: '1495438511690485830' }, // Helper
+        ];
+
+        const staffPerms = [
+          PermissionFlagsBits.ViewChannel,
+          PermissionFlagsBits.SendMessages,
+          PermissionFlagsBits.AttachFiles,
+        ];
+
         const permissionOverwrites = [
           { id: guild.id, deny: [PermissionFlagsBits.ViewChannel] },
           {
@@ -101,26 +113,9 @@ module.exports = {
         ];
 
         if (!isQueja) {
-          if (supportRoleId) {
-            permissionOverwrites.push({
-              id: supportRoleId,
-              allow: [
-                PermissionFlagsBits.ViewChannel,
-                PermissionFlagsBits.SendMessages,
-                PermissionFlagsBits.ManageMessages,
-                PermissionFlagsBits.AttachFiles,
-              ],
-            });
+          for (const role of STAFF_ROLES) {
+            permissionOverwrites.push({ id: role.id, allow: staffPerms });
           }
-
-          permissionOverwrites.push({
-            id: '1495438511690485830', // Helper
-            allow: [
-              PermissionFlagsBits.ViewChannel,
-              PermissionFlagsBits.SendMessages,
-              PermissionFlagsBits.AttachFiles,
-            ],
-          });
         }
 
         const ticketChannel = await guild.channels.create({
