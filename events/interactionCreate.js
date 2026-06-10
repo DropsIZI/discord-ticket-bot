@@ -150,15 +150,15 @@ module.exports = {
         );
 
         const pingRoles = {
-          soporte: '1495438511690485830', // Helper
-          bug:     '1486544806250418346', // Mods
-          compras: '1486544373297709077', // Dioses (Owner)
-          queja:   '1486544373297709077', // Dioses (Owner) — solo ellos ven las quejas
+          soporte: ['1495438511690485830'],                            // Helper
+          bug:     ['1486544806250418346', '1500337427276103850'],     // Mods + Admin
+          compras: ['1486544373297709077'],                            // Owner
+          queja:   ['1486544373297709077'],                            // Owner
         };
-        const pingRole = pingRoles[type];
+        const pings = (pingRoles[type] || []).map(id => `<@&${id}>`).join(' ');
 
         await ticketChannel.send({
-          content: `${user}${pingRole ? ` | <@&${pingRole}>` : ''}`,
+          content: `${user}${pings ? ` | ${pings}` : ''}`,
           embeds: [welcomeEmbed],
           components: [closeRow],
         });
