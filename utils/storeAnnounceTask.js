@@ -2,7 +2,8 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('
 const THEME = require('./theme');
 
 const STORE_CHANNEL_ID = '1491934044831879189';
-const INTERVAL_HOURS = 3;
+const INTERVAL_HOURS = 6;
+const DELAY_HOURS = 3; // arranca 3h después del anuncio del servidor para no acumularse
 
 function startStoreAnnounceTask(client) {
   const announce = async () => {
@@ -38,9 +39,13 @@ function startStoreAnnounceTask(client) {
     }
   };
 
-  announce();
-  setInterval(announce, INTERVAL_HOURS * 60 * 60 * 1000);
-  console.log(`🛒 Anuncios de tienda cada ${INTERVAL_HOURS}h`);
+  // Espera 3h antes del primer anuncio para desfasarse del anuncio del servidor
+  setTimeout(() => {
+    announce();
+    setInterval(announce, INTERVAL_HOURS * 60 * 60 * 1000);
+  }, DELAY_HOURS * 60 * 60 * 1000);
+
+  console.log(`🛒 Anuncios de tienda cada ${INTERVAL_HOURS}h (primer anuncio en ${DELAY_HOURS}h)`);
 }
 
 module.exports = { startStoreAnnounceTask };
