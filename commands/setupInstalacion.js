@@ -4,6 +4,7 @@ const {
   PermissionFlagsBits,
 } = require('discord.js');
 const THEME = require('../utils/theme');
+const { getLinks } = require('../utils/linkStore');
 
 const ALLOWED_ROLES = ['1486544373297709077', '1486544806250418346']; // Dioses, Mods
 
@@ -20,6 +21,8 @@ module.exports = {
     }
 
     await interaction.deferReply({ ephemeral: true });
+
+    const { modpack: link } = getLinks();
 
     const embed = new EmbedBuilder()
       .setTitle('🌌 BIENVENIDO A COBBLEVERSE MMO — GUÍA DE INSTALACIÓN')
@@ -44,7 +47,7 @@ module.exports = {
         `Descárgalo en: https://modrinth.com/app\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## 📥 Link de descarga del Modpack (Premium)\n` +
-        `> https://drive.google.com/file/d/1ldPCZQRxMKWFcrXCx0YG3_uUmcEgkWbQ/view?usp=sharing\n\n` +
+        `> ${link || '_Link no configurado — usa /set-link_'}\n\n` +
         `❓ ¿Tienes problemas? Abre un ticket en <#1486773607542554864>`
       )
       .setFooter({ text: `${THEME.footer}` })

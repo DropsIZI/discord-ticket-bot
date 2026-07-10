@@ -4,6 +4,7 @@ const {
   PermissionFlagsBits,
 } = require('discord.js');
 const THEME = require('../utils/theme');
+const { getLinks } = require('../utils/linkStore');
 
 const ALLOWED_ROLES = ['1486544373297709077', '1486544806250418346']; // Dioses, Mods
 
@@ -21,6 +22,8 @@ module.exports = {
 
     await interaction.deferReply({ ephemeral: true });
 
+    const { lite: link } = getLinks();
+
     const embed = new EmbedBuilder()
       .setTitle('💡 COBBLEVERSE MMO — GUÍA PARA BAJOS RECURSOS')
       .setColor(THEME.colors.success)
@@ -35,7 +38,7 @@ module.exports = {
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## 📦 PASO 2 — Descarga el Modpack Lite\n` +
         `> Este modpack es más liviano y está optimizado para que el juego vaya fluido.\n` +
-        `> https://drive.google.com/file/d/1opmWZV13B63FUN3IDOUhgISFfdaZkEOL/view?usp=sharing\n\n` +
+        `> ${link || '_Link no configurado — usa /set-link_'}\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## ⚙️ PASO 3 — Abre SKLauncher\n` +
         `> Abre el programa que descargaste.\n` +

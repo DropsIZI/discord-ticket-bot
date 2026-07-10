@@ -4,6 +4,7 @@ const {
   PermissionFlagsBits,
 } = require('discord.js');
 const THEME = require('../utils/theme');
+const { getLinks } = require('../utils/linkStore');
 
 const ALLOWED_ROLES = ['1486544373297709077', '1486544806250418346']; // Dioses, Mods
 
@@ -21,6 +22,8 @@ module.exports = {
 
     await interaction.deferReply({ ephemeral: true });
 
+    const { modpack: link } = getLinks();
+
     const embed = new EmbedBuilder()
       .setTitle('💎 COBBLEVERSE MMO — GUÍA PARA NO PREMIUM')
       .setColor(THEME.colors.secondary)
@@ -31,7 +34,7 @@ module.exports = {
         `> ⚠️ **Si tienes AdBlock activado, la página no te dejará descargar.** Desactívalo temporalmente.\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## 📦 PASO 2 — Descarga el Modpack de Cobbleverse\n` +
-        `> https://drive.google.com/file/d/1ldPCZQRxMKWFcrXCx0YG3_uUmcEgkWbQ/view?usp=sharing\n\n` +
+        `> ${link || '_Link no configurado — usa /set-link_'}\n\n` +
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
         `## ⚙️ PASO 3 — Configura SKLauncher\n` +
         `> Abre **SKLauncher** y añade tu **Nickname**.\n` +
