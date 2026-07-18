@@ -12,25 +12,55 @@ function startStoreAnnounceTask(client) {
       if (!channel) return;
 
       const embed = new EmbedBuilder()
-        .setTitle('🏆  ¡Apoya CobbleverseMMO — Tienda Oficial!')
+        .setTitle('🏆  ¡Tienda Oficial — CobbleverseMMO!')
         .setColor(THEME.colors.primary)
         .setDescription(
-          `### ¿Quieres ser el mejor Entrenador del servidor? ⚡\n` +
-          `> Consigue rangos exclusivos y beneficios únicos que llevarán tu aventura Pokémon al siguiente nivel.\n\n` +
+          `### ⚡ ¿Listo para llevar tu aventura Pokémon al siguiente nivel?\n` +
+          `> Consigue productos exclusivos que solo encontrarás en **CobbleverseMMO**.\n\n` +
+
           `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
-          `✨ **Rangos exclusivos con perks únicos que no conseguirás en ningún otro servidor.**\n\n` +
-          `> Cada compra ayuda a mantener y mejorar el servidor. ❤️\n` +
-          `> ¡Únete a los mejores Entrenadores de **CobbleverseMMO**!`
+
+          `## 🗝️ Llaves de Gacha\n` +
+          `> Abre cajas y consigue Pokémon directamente en tu inventario.\n\n` +
+          `> 🔵 **Llave Normal** — Pokémon aleatorio del pool estándar\n` +
+          `> ✨ **Llave Shiny** — Garantiza un Pokémon **shiny**\n` +
+          `> 👑 **Llave Legendaria** — Garantiza un Pokémon **legendario**\n` +
+          `> 🌟 **Llave Shiny Legendaria** — El mejor premio: **legendario shiny** garantizado\n\n` +
+
+          `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+
+          `## 📦 Cofres\n` +
+          `> Los cofres normales contienen recompensas variadas... ¡y sorpresas!\n\n` +
+          `> 🎁 Objetos y recursos exclusivos\n` +
+          `> 👑 Posibilidad de obtener un **Pokémon Legendario**\n` +
+          `> ✨ Posibilidad de obtener un **Shiny Boost** — aumenta tus chances de encontrar shinys\n` +
+          `> 🌍 Posibilidad de obtener un **Boost Global** — beneficia a **todo el servidor** a la vez\n\n` +
+
+          `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+
+          `## 🎖️ Rangos exclusivos\n` +
+          `> Perks únicos, prefijos especiales y acceso a canales exclusivos.\n` +
+          `> Cada compra ayuda a mantener el servidor en línea. ❤️\n\n` +
+
+          `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+
+          `🤝 **Patrocinado por [AplaxyHosting](https://aplaxyhosting.com)** — Hosting de confianza para servidores Minecraft.\n\n` +
+
+          `🛒 **Visita la tienda →** https://cobbleversemmo.tebex.io`
         )
         .setImage('https://raw.githubusercontent.com/DropsIZI/discord-ticket-bot/master/assets/banner_v2.png')
-        .setFooter({ text: `${THEME.footer} • Pagos 100% seguros` })
+        .setFooter({ text: `${THEME.footer} • Pagos 100% seguros • Patrocinado por AplaxyHosting` })
         .setTimestamp();
 
       const row = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setLabel('🛒 Visitar Tienda')
           .setURL('https://cobbleversemmo.tebex.io')
-          .setStyle(ButtonStyle.Link)
+          .setStyle(ButtonStyle.Link),
+        new ButtonBuilder()
+          .setLabel('🤝 AplaxyHosting')
+          .setURL('https://aplaxyhosting.com')
+          .setStyle(ButtonStyle.Link),
       );
 
       await channel.send({ embeds: [embed], components: [row] });
