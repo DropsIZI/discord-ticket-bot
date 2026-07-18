@@ -44,7 +44,7 @@ function startStoreAnnounceTask(client) {
 
           `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
 
-          `🤝 **Patrocinado por [AplaxyHosting](https://aplaxyhosting.com)** — Hosting de confianza para servidores Minecraft.\n\n` +
+          `🤝 **Patrocinado por [AplaxyHosting](https://aplaxy.com)** — Hosting de confianza para servidores Minecraft.\n\n` +
 
           `🛒 **Visita la tienda →** https://cobbleversemmo.tebex.io`
         )
@@ -59,7 +59,7 @@ function startStoreAnnounceTask(client) {
           .setStyle(ButtonStyle.Link),
         new ButtonBuilder()
           .setLabel('🤝 AplaxyHosting')
-          .setURL('https://aplaxyhosting.com')
+          .setURL('https://aplaxy.com')
           .setStyle(ButtonStyle.Link),
       );
 
